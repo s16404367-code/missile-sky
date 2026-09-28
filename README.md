@@ -60,6 +60,8 @@ The built site is static. The browser needs JavaScript enabled. It does not requ
 
 ## Deploy to GitHub Pages (beginner steps)
 
+> **Important:** This is a Vite/TypeScript source project. In Pages settings choose **GitHub Actions**, not **Deploy from a branch**. Branch deployment does not run the Vite build, so the raw `src/main.ts` is not a playable site. The workflow at `.github/workflows/deploy.yml` builds `dist/` and publishes that output. Some file-upload dialogs hide dot-folders such as `.github`; use git or create that workflow file explicitly if it is missing.
+
 1. **Create a repository.** Sign in to GitHub, choose **New repository**, give it a name such as `missile-sky`, and create it. A public repository is simplest for GitHub Pages on a free plan.
 2. **Put this project in the repository.** Either upload the project files in GitHub's web interface, or clone the empty repository and copy the project into it. Keep `.github/workflows/deploy.yml` in its exact path.
 3. **Push to `main`.** If using git from a terminal:
